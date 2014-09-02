@@ -1,0 +1,8 @@
+<div class="menu_box_list">
+    <ul>
+        {foreach $instances as $menu_instance}
+        <li><a href="page.php?sys_page_id={$menu_instance->linked_page->id}"><span>{$menu_instance->entry}</span></a></li>
+        {/foreach}
+        <div class="clear"></div>
+    </ul>
+</div>
