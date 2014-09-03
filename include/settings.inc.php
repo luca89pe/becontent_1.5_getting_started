@@ -11,7 +11,7 @@ class Settings
 	private static  $modmode=true;
 
     /*set to debug to show html error*/
-	private static $operative_mode="release";
+	private static $operative_mode="debug";
 	
 	public static function getOperativeMode()
 	{
