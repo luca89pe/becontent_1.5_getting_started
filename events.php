@@ -18,6 +18,7 @@ InitGraphic::getInstance()->createGraphic($main,false,false);
 
 $events = new Content($eventsEntity, $usersEntity);
 $events->setOrderFields("date DESC");
+$events->setFilter("active", "*");
 
 $main->setContent("body", $events->get());
 $main->close();
