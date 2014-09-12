@@ -21,7 +21,15 @@ $form->addText("title", "Titolo", 80, MANDATORY);
 $form->addLongDate("date", "Data", MANDATORY);
 
 $form->addEditor("body", "Testo", 20, 50);
-$form->addCheck("active", ":active:*:CHECKED");
+$form->addCheck("active", "Attivo");
+
+$imageForm=new ImageForm('imageEntry',$pageEntity);
+$imageForm->addImage('foto','Foto');
+$form->triggers($imageForm);
+
+if (!isset($_REQUEST['action'])) {
+	$_REQUEST['action'] = 'edit';
+}
 
 $main->setContent("body", $form->requestAction());
 
