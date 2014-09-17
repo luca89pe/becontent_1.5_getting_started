@@ -1,43 +1,22 @@
-<head>
-    <title>Pinball Website Template | Home :: w3layouts</title>
-    <link href="skins/theme/css/style.css" rel='stylesheet' type='text/css' />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="skins/theme/images/fav-icon.png" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!----webfonts---->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <!----//webfonts---->
-    <!-- Global CSS for the page and tiles -->
-    <link rel="stylesheet" href="skins/theme/css/main.css">
-    <!-- //Global CSS for the page and tiles -->
-    <!---start-click-drop-down-menu----->
-    <script src="skins/theme/js/jquery.min.js"></script>
-    <!----start-dropdown--->
-    {literal}
-    <script type="text/javascript">
-    <!--
-        var $ = jQuery.noConflict();
-        $(function() {
-            $('#activator').click(function() {
-                $('#box').animate({'top': '0px'}, 500);
-            });
-            $('#boxclose').click(function() {
-                $('#box').animate({'top': '-700px'}, 500);
-            });
-        });
-        $(document).ready(function() {
-            //Hide (Collapse) the toggle containers on load
-            $('.toggle_container').hide();
-            //Switch the "Open" and "Close" state per click then slide up/down (depending on open/close state)
-            $('.trigger').click(function() {
-                $(this).toggleClass('active').next().slideToggle('slow');
-                return false; //Prevent the browser jump to the link anchor
-            });
 
-        });
-    // -->
-    </script>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Event On</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="apple-touch-icon" href="apple-touch-icon-precomposed.png">
+    <link rel="shortcut icon" href="skins/theme/dtml/it/favicon.png">
+    <link rel="stylesheet" type="text/css" href="skins/theme/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="skins/theme/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="skins/theme/css/jquery.datetimepicker.css">
+    <link rel="stylesheet" href="skins/theme/css/main.css">
+    {literal}<script src="skins/theme/js/vendor/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript">var switchTo5x = true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">stLight.options({publisher: "ur-b4964695-8b2f-20dd-2ced-c9f6141de24c", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
     {/literal}
-    <!----//End-dropdown--->
-    <!---//End-click-drop-down-menu----->
 </head>
