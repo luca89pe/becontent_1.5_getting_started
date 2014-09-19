@@ -2,7 +2,7 @@
 <div class="banner">
     <div class="container">
         <div class="center">
-            <h1 class="title">Get Ready for The Next Event. Its Begining!</h1>
+            <h1 class="title">Get Ready for The Next Event. It's Begining!</h1>
             <p>Etiam tristique ornare massa. Suspendisse in porta mauris. Phasellus quis libero eget diam tincidunt ornare. Suspendisse et libero urna. Cras auctor cursus purus, eget fringilla tellus dictum tempus. Ut gravida laoreet tincidunt. </p>
 
             <!-- Clock -->
@@ -114,18 +114,24 @@
                 <li><a href="#tabs-2">Popular Events</a></li>
             </ul>
 
+
+            
+
+
             <!--  Tabs-1 -->
             <div id="tabs-1">
                 <div class="event-container">
                     <div class="row">
                         <div class="col-md-3">
+                            
+                            {foreach from=$last_events item=event}
                             <div class="event">
                                 <div class="eventsimg">
-                                   <img src="skins/theme/img/515x390.gif" alt="">
+                                    <img src="" alt="">
                                 </div>
                                 <div class="event-content">
-                                    <h3 class="title">Using Social Services Increase Your Sales </h3>
-                                    <p>Lorem ipsum dolor sit amet, feugiat delicata id cum, eu sit. [...] </p>
+                                    <h3 class="title">{$event->title}</h3>
+                                    <p>{$event->body} [...] </p>
                                     <a href="#" class="btn btn-pri">buy tıcket</a>
                                 </div>
                                 <div class="links clearfix">
@@ -136,12 +142,14 @@
                                     </ul> 
                                 </div>
                             </div>
+                            {/foreach}
+                            
                         </div>
 
                         <div class="col-md-3">
                             <div class="event">
                                 <div class="eventsimg">
-                                   <img src="skins/theme/img/515x390.gif" alt="">
+                                    <img src="skins/theme/img/515x390.gif" alt="">
                                 </div>
                                 <div class="event-content">
                                     <h3 class="title">Using Social Services Increase Your Sales </h3>
@@ -161,7 +169,7 @@
                         <div class="col-md-3">
                             <div class="event">
                                 <div class="eventsimg">
-                                  <img src="skins/theme/img/515x390.gif" alt="">
+                                    <img src="skins/theme/img/515x390.gif" alt="">
                                 </div>
                                 <div class="event-content">
                                     <h3 class="title">Using Social Services Increase Your Sales </h3>
@@ -181,7 +189,7 @@
                         <div class="col-md-3">
                             <div class="event">
                                 <div class="eventsimg">
-                                  <img src="skins/theme/img/515x390.gif" alt="">
+                                    <img src="skins/theme/img/515x390.gif" alt="">
                                 </div>
                                 <div class="event-content">
                                     <h3 class="title">Using Social Services Increase Your Sales </h3>
@@ -208,7 +216,7 @@
                         <div class="col-md-3">
                             <div class="event">
                                 <div class="eventsimg">
-                                   <img src="skins/theme/img/515x390.gif" alt="">
+                                    <img src="skins/theme/img/515x390.gif" alt="">
                                 </div>
                                 <div class="event-content">
                                     <h3 class="title">Using Social Services Increase Your Sales </h3>
@@ -228,7 +236,7 @@
                         <div class="col-md-3">
                             <div class="event">
                                 <div class="eventsimg">
-                                  <img src="skins/theme/img/515x390.gif" alt="">
+                                    <img src="skins/theme/img/515x390.gif" alt="">
                                 </div>
                                 <div class="event-content">
                                     <h3 class="title">Using Social Services Increase Your Sales </h3>
@@ -248,7 +256,7 @@
                         <div class="col-md-3">
                             <div class="event">
                                 <div class="eventsimg">
-                                 <img src="skins/theme/img/515x390.gif" alt="">
+                                    <img src="skins/theme/img/515x390.gif" alt="">
                                 </div>
                                 <div class="event-content">
                                     <h3 class="title">Using Social Services Increase Your Sales </h3>
@@ -267,7 +275,7 @@
                         <div class="col-md-3">
                             <div class="event">
                                 <div class="eventsimg">
-                                  <img src="skins/theme/img/515x390.gif" alt="">
+                                    <img src="skins/theme/img/515x390.gif" alt="">
                                 </div>
                                 <div class="event-content">
                                     <h3 class="title">Using Social Services Increase Your Sales </h3>
