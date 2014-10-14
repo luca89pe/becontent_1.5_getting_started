@@ -21,7 +21,7 @@ $form->addText("title", "Titolo", 80, MANDATORY);
 $form->addLongDate("date", "Data", MANDATORY);
 
 $form->addEditor("body", "Testo", 20, 50);
-$form->addCheck("active", "Attivo");
+$form->addCheck("popular", "Popular");
 
 $imageForm=new ImageForm('imageEntry',$pageEntity);
 $imageForm->addImage('foto','Foto');

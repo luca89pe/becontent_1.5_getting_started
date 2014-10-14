@@ -9,13 +9,13 @@ class EntityEvents extends Entity
 	public function __construct($database,$name, $owner = "")
 	{
 		parent::__construct($database,$name,$owner);
-		$this->setPresentation("title", "active");
+		$this->setPresentation("title", "popular");
 		
 		$this->addField("title", VARCHAR, 68, MANDATORY);       // The title of the event
 		$this->addField("lastmod", LONGDATE, MANDATORY);        // Last modification date (automatic)
 		$this->addField("creation", LONGDATE, MANDATORY);       // Creation date (automatic)
 		$this->addField("date", LONGDATE, MANDATORY);           // Date field (date selected by user)
-		$this->addField("active", VARCHAR, 1);                  // A flag
+		$this->addField("popular", VARCHAR, 1);                 // A flag
 		$this->addField("body", TEXT);                          // The content of the event (text field, inserted by a WYSIWYG editor)
         
                 // Fields used by the beContent search engine (beta!!!)

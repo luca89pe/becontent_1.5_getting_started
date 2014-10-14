@@ -13,6 +13,7 @@ DEFINE("ISNOTEMPTY", "ISNOTEMPTY");
 DEFINE("IF_FIRST", "IF_FIRST");
 
 DEFINE('ACTIVE', "active = '*'");
+DEFINE('POPULAR', "popular = '*'");
 
 Class Content {
 
