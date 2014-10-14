@@ -9,11 +9,12 @@ InitGraphic::getInstance()->createGraphic($main);
 
 $home = new Skinlet("home");
 
-$eventi = new Skinlet("widget/eventi.html");
+$eventi = new Skinlet("widget/last_events.html");   // Load a new Skinlet, used for the last events widget
 
-$last_events = new Content($eventsEntity, $usersEntity);
+$last_events = new Content($eventsEntity, $usersEntity);    // Load the content of the Events entity
+$last_events->setLimit(8);      // Limit to 8 results (last 8 events)
 
-$last_events->apply($eventi);
+$last_events->apply($eventi);   // Apply the content of the entity to the skinlet
 
 $home->setContent("last_events", $eventi->get());
 
