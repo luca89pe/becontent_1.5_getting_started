@@ -1,0 +1,21 @@
+{foreach $instances as $instance}
+<div class="col-md-3">
+    <div class="event">
+        <div class="eventsimg">
+            <img src="skins/theme/img/515x390.gif" alt="">
+        </div>
+        <div class="event-content">
+            <h3 class="title">title: {$instance->title} </h3>
+            <p>body: {$instance->body} </p>
+            <a href="#" class="btn btn-pri">buy tıcket</a>
+        </div>
+        <div class="links clearfix">
+            <ul>
+                <li><a class='st_sharethis_large' displayText='ShareThis'><i class="icon fa fa-share"></i> share</a></li>
+                <li><a href="#"><i class="icon fa fa-heart"></i>26</a></li>
+                <li><a href="#" ><i class="icon fa fa-comment"></i>33</a> </li> 
+            </ul> 
+        </div>
+    </div>
+</div>
+{/foreach}
