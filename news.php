@@ -9,12 +9,9 @@ require_once "include/content.inc.php";
 
 require_once(realpath(dirname(__FILE__)).'/include/view/template/InitGraphic.php');
 
-
-
 $main = new Skin();
 
 InitGraphic::getInstance()->createGraphic($main,false,false);
-
 
 $news = new Content($newsEntity, $usersEntity);
 $news->setOrderFields("date DESC");
