@@ -23,6 +23,8 @@ $form->addLongDate("date", "Data", MANDATORY);
 $form->addEditor("body", "Testo", 20, 50);
 $form->addCheck("popular", "Popular");
 
+$form->addSelectFromReference($pageEntity, "category", "Category");
+
 $imageForm=new ImageForm('imageEntry',$pageEntity);
 $imageForm->addImage('foto','Foto');
 $form->triggers($imageForm);

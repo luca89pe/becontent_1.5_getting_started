@@ -41,4 +41,5 @@ class EntityEvents extends Entity
 	}
 }
 $eventsEntity = new EntityEvents($database, "user_events", WITH_OWNER);
-$eventsEntity->addReference($imageEntity,"foto");
+$eventsEntity->addReference($imageEntity, "foto");
+//$eventsEntity->addReference($categoryEntity, "category");
