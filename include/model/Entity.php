@@ -299,8 +299,8 @@ class Entity {
 		$query=$this->generateSelectQuery($where_conditions, $join_entities, $order_conditions, $limit_condition);
 
 
-		if($this->debugmode)
-			echo "Entity::retrieve ". $query. " for ".$this->name;
+		if($this->debugmode)                          
+                        echo "<br>Entity::retrieve ". $query. " for ".$this->name;
 
 		$oid = mysql_query($query);
 		if (!$oid) {
@@ -564,7 +564,7 @@ class Entity {
 		 */
 		$query=$select_clause.$join_clause.$where_clause.$order_clause.$limit_clause.";";
 
-		if($this->debugmode)
+		if(!$this->debugmode)
 			echo "Entity::generateSelectQuery for {$this->name}<br>".$query."<br>";
 
 

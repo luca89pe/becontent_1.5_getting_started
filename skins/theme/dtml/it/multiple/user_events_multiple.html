@@ -26,7 +26,7 @@ MULTIPLE TEMPLATE STANDARD; <h1>user_events</h1>{if $instances != null || $insta
         <h2 class="title">Events</h2>
         <ul class="breadcrumb">
             <li><a href="index.php">Home</a></li>
-             <li>Events</li>
+            <li>Events</li>
         </ul>
     </div>
 </section>
@@ -37,7 +37,7 @@ MULTIPLE TEMPLATE STANDARD; <h1>user_events</h1>{if $instances != null || $insta
         <div class="row">
             <div class="blog col-md-9">
                 <div class="clearfix">
-                    
+
                     {foreach from=$instances item=instance}
                     <div class="event-container clearfix">
                         <div class="event clearfix">
@@ -46,7 +46,7 @@ MULTIPLE TEMPLATE STANDARD; <h1>user_events</h1>{if $instances != null || $insta
                             </div>
                             <div class="event-content">
                                 <h3 class="title"><a href="events.php?user_events_id={$instance->id}">{$instance->title}</a></h3>
-                                 <ul class="meta">
+                                <ul class="meta">
                                     <li><a href="#"><i class="icon  fa  fa-microphone"></i>Meeting</a>
                                     </li><li class="date"><i class="icon fa fa-calendar"></i>{$instance->date}</li>
                                     <li><a href="#"><i class="icon fa fa-comment"></i> 19</a> </li>
@@ -59,15 +59,14 @@ MULTIPLE TEMPLATE STANDARD; <h1>user_events</h1>{if $instances != null || $insta
                     </div>
                     {/foreach}
 
-
                     <ul class="pagination clearfix">
-                        <li class=""><a href="#"><i class="fa fa-angle-left"></i></a></li>
+<!--                        <li class=""><a href="#"><i class="fa fa-angle-left"></i></a></li>
                         <li class=""><a href="#">1</a></li>
                         <li class=""><a href="#">2</a></li>
                         <li class=""><a href="#">3</a></li>
                         <li class=""><a href="#">4</a></li>
                         <li class=""><a href="#">5</a></li>
-                        <li class=""><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                        <li class=""><a href="#"><i class="fa fa-angle-right"></i></a></li>-->
                     </ul>
                 </div>
             </div>
@@ -79,7 +78,7 @@ MULTIPLE TEMPLATE STANDARD; <h1>user_events</h1>{if $instances != null || $insta
                             <form>
                                 <div class="form-input search-location">
                                     <input type="text" placeholder="Search anything">
-                                   
+
                                     <button class="icon fa fa-search"></button>
                                 </div>
                             </form>
@@ -118,39 +117,80 @@ MULTIPLE TEMPLATE STANDARD; <h1>user_events</h1>{if $instances != null || $insta
 
                             <p> <label for="amount">Price :</label>
                                 <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;"> </p>
-                                <a href="#" class="btn btn-disabled">FILTER</a> 
+                            <a href="#" class="btn btn-disabled">FILTER</a> 
+                        </div>
+                    </div>
+
+                    <div class="widget categories">
+                        <h3 class="title">Filter by Categories</h3>
+                        <ul>
+                            <li><a href="#">Everything <span class="numbers">68</span></a></li>
+                            <li><a href="#">Art<span class="numbers">10</span></a></li>
+                            <li><a href="#">Classical &amp; Opera<span class="numbers">25</span></a></li>
+                            <li><a href="#">Classical<span class="numbers">30</span></a></li>
+                            <li><a href="#">Opera<span class="numbers">100</span></a></li>
+                            <li><a href="#">Comedy<span class="numbers">5</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="widget tag">
+                        <h3 class="title">Tag</h3>  
+                        <a href="#">Event</a><a href="#">Fashion</a><a href="#">Design</a><a href="#">Hotels</a><a href="#">Up Coming</a><a href="#">Venue</a><a href="#">Speaker</a><a href="#" class="last">Conference</a>
+                    </div>
+
+                    <div class="widget news">
+                        <h3 class="title">Join Our Newsletter</h3>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" placeholder="Add Your Email" id="">
+                                <button class="icon fa fa-paper-plane-o "></button>
                             </div>
-                        </div>
-
-                        <div class="widget categories">
-                            <h3 class="title">Filter by Categories</h3>
-                            <ul>
-                                <li><a href="#">Everything <span class="numbers">68</span></a></li>
-                                <li><a href="#">Art<span class="numbers">10</span></a></li>
-                                <li><a href="#">Classical &amp; Opera<span class="numbers">25</span></a></li>
-                                <li><a href="#">Classical<span class="numbers">30</span></a></li>
-                                <li><a href="#">Opera<span class="numbers">100</span></a></li>
-                                <li><a href="#">Comedy<span class="numbers">5</span></a></li>
-                            </ul>
-                        </div>
-
-                        <div class="widget tag">
-                            <h3 class="title">Tag</h3>  
-                            <a href="#">Event</a><a href="#">Fashion</a><a href="#">Design</a><a href="#">Hotels</a><a href="#">Up Coming</a><a href="#">Venue</a><a href="#">Speaker</a><a href="#" class="last">Conference</a>
-                        </div>
-
-                        <div class="widget news">
-                            <h3 class="title">Join Our Newsletter</h3>
-                            <form>
-                                <div class="form-group">
-                                    <input type="text" placeholder="Add Your Email" id="">
-                                    <button class="icon fa fa-paper-plane-o "></button>
-                                </div>
-                                <button class="btn btn-disabled">Sign Up</button>
-                            </form>
-                        </div>
-                    </aside>
-                </div>
-            </div> 
+                            <button class="btn btn-disabled">Sign Up</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
         </div> 
-    </section>
+    </div> 
+</section>
+
+
+<script>
+    $(document).ready(function () {
+        // Default options
+        var currPage = 1;
+        var perPage = 5;
+        // Variables
+        var totElements = $(".event-container").length;
+        var totPages = Math.ceil(totElements / perPage);
+        var startElement;
+        var lastElement;
+        
+        // Create pagination numbers
+        for(i = 0; i < totPages; i++){
+            j = i+1;
+            $(".pagination").append('<li class=""><a href="javascript:void(0);" data-page="'+j+'">'+j+'</a></li>');
+        }
+        
+        // This function calculates elements to show, it is fired at page load and every time a pagination link is clicked
+        var calculateCurrElements = function(){
+            // Hide all events
+            $('.event-container').hide();
+            alert("calculateCurrElements fired");
+            startElement = (currPage-1)*perPage;
+            lastElement = startElement + perPage;
+            alert("currPage: "+ currPage +", startElement: " + startElement + ", lastElement: " + lastElement);
+            // Show currPage's events
+            $('.event-container').slice(startElement, lastElement).show();
+        };
+        
+        // Fire the function on page ready
+        calculateCurrElements();
+        
+        // Fire the function on link click
+        $(".pagination > li a").click(function(){
+            currPage = $(this).attr("data-page");
+            calculateCurrElements();
+        });
+    });
+</script>

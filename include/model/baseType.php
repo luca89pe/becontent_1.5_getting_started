@@ -154,7 +154,14 @@ class baseType {
 		}
 		
 		$where_value=mysql_real_escape_string($where_value);
-		$query= Parser::first_comma("select".$commaId,"{$conditionType} ")."{$entity_name}{$postfix_string}.{$this->name} = '{$where_value}' ";
+                if(strpos($where_value, 'LIKE') !== false){
+                    echo "<br><br>prova1<br><br>";
+                    $where_value = str_replace("LIKE", "", $where_value);
+                    $query= Parser::first_comma("select".$commaId,"{$conditionType} ")."{$entity_name}{$postfix_string}.{$this->name} LIKE '{$where_value}' ";
+                }else{
+                    echo "<br><br>prova2<br><br>";
+                    $query= Parser::first_comma("select".$commaId,"{$conditionType} ")."{$entity_name}{$postfix_string}.{$this->name} = '{$where_value}' ";
+                }
 		return $query;
 	}
 }

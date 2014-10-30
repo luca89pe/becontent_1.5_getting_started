@@ -1,0 +1,11 @@
+1. search page -> filtrare i risultati
+2. pagination
+3. commenti inseribili tramite form dell'evento
+4. commenti visualizzabili nella pagina dell'evento
+5. categorie
+
+
+
+1. 
+2. CON SMARTY
+5. require in ordine!!!!!!

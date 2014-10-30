@@ -1887,6 +1887,7 @@ blockquote p{
 	font-weight:300;
 }
 .comments li{
+        list-style: none;
 	margin-bottom:30px;
 }
 .comments .title{
@@ -4017,3 +4018,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b3c4e', end
   -o-transform: rotateX(0deg);
   transform: rotateX(0deg);
 }
+
+
+/********* ADDED BY ME *******/

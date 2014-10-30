@@ -1,39 +1,39 @@
 <?php
+ini_set('xdebug.var_display_max_depth', -1);
+ini_set('xdebug.var_display_max_children', -1);
+ini_set('xdebug.var_display_max_data', -1);
+
 require_once "include/skin.inc.php";
 require_once 'include/skinlet.inc.php';
 require_once "include/beContent.inc.php";
 require_once "include/entities.inc.php";
 require_once "include/content.inc.php";
 require_once "include/control/search/searchEngine.php";
+
 require_once(realpath(dirname(__FILE__)).'/include/view/template/InitGraphic.php');
 
 
-
 $main = new Skin();
+$search = new Skinlet("search.html");
 
-InitGraphic::getInstance()->createGraphic($main);
+InitGraphic::getInstance()->createGraphic($main,false,false);
 
-$homeTemplate = new Skinlet("search");
-$engine=new SearchEngine();
+$events = new Content($eventsEntity, $usersEntity);
 
-if(isset($_POST["search"])&& $_POST["search"]!="")
-{
-	$sintax=explode(":",$_POST["search"]);
-	if(isset($sintax[1]))
-	{
-		$entityName=$sintax[0];
-		$search= explode(" ",$sintax[1]);
-	}
-	else
-	{
-		$entityName=null;
-		$search= explode(" ",$_POST["search"]);
-	}
+//var_dump(DB::getInstance()->getEntityByName($eventsEntity->name));
+
+if(isset($_GET['title'])){
+    $events->setFilter("title", $_GET['title']);
 }
-$homeTemplate->setContent("results", $engine->search($entityName,$search));
-$homeTemplate->setContent("search_keywords", $_POST["search"]);
-$homeTemplate->setContent("results_number", $engine->resultsNumber);
+if(isset($_GET['date'])){
+    $events->setFilter("date", "LIKE %".$_GET['date'] . "%");
+}
+if(isset($_GET['owner'])){
+    $events->setFilter("owner", $_GET['owner']);
+}
 
-$main->setContent("body", $homeTemplate->get());
+$search->setContent("results", $events->get());
+
+$main->setContent("body", $search->get());
 $main->close();
 ?>

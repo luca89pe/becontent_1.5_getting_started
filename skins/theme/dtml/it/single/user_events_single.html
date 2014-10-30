@@ -21,7 +21,10 @@ SINGLE TEMPLATE STANDARD; <h1>user_events</h1>
 </div>
 -->
 
+{$instance->categoria->name|@var_dump}
 
+
+{if $instances != null || $instance != null}
 <!-- Sub Banner -->
 <section class="sub-banner newsection">
     <div class="container">
@@ -50,9 +53,9 @@ SINGLE TEMPLATE STANDARD; <h1>user_events</h1>
 
 
                             <ul class="meta clearfix">
-                                <li><a href="#"><i class="icon fa  fa-music"></i>Audio</a>
+                                <li><a href="#"><i class="icon fa  fa-music"></i>{$instance->categoria->presentation}</a>
                                 </li><li class="date"><i class="icon fa fa-calendar"></i>{$instance->date}</li>
-                                <li><a href="#"><i class="icon fa fa-comment"></i> 19</a> </li>
+                                <li><a href="#comments"><i class="icon fa fa-comment"></i> {$instance->user_comments|@count}</a> </li>
                                 <li><a href="#"><i class="icon fa fa-user"></i>by {$instance->owner->presentation}</a></li>
                             </ul>
 
@@ -62,52 +65,31 @@ SINGLE TEMPLATE STANDARD; <h1>user_events</h1>
                     </div>
                     <div class="sep"></div>
                 </section>
+                
                 <!-- comments -->
-                <section class="comments newsection">
+                <section class="comments newsection" id="comments">
                     <h2 class="title">Comments</h2>
                     <ul>
+                        {if $instance->user_comments != null}
+                        {foreach $instance->user_comments item=comment}
                         <li>
                             <div class="comment">
                                 <div class="author-img">
                                     <img src="" alt="">
                                 </div>
                                 <div class="comment-content">
-                                    <p class="author">John Doe  <span class="date"> 02:16 pm - April 03,2014</span> </p>
-                                    <p>Liquorice sweet roll sesame snaps sweet roll liquorice sweet macaroon chocolate. Muffin sweet roll topping tootsie roll. Chocolate bar muffin lemon drops. Fruitcake jelly-o cheesecake apple pie liquorice danish gummies gummies marshmallow. </p>
-                                    <a href="#" class="btn btn-disabled">Reply</a>
+                                    <p class="author">{$comment->name}  <span class="date">{$comment->creation|date_format:"%I:%M %p - %B %e, %Y"}</span> </p>
+                                    <p>{$comment->body}</p>
                                 </div>
                             </div>
-                            <!-- Comments Child -->
-                            <ul class="child">
-                                <li>
-                                    <div class="comment">
-                                        <div class="author-img">
-                                            <img src="" alt="">
-                                        </div>
-                                        <div class="comment-content">
-                                            <p class="author">John Doe  <span class="date"> 02:16 pm - April 03,2014</span> </p>
-                                            <p>Liquorice sweet roll sesame snaps sweet roll liquorice sweet macaroon chocolate. Muffin sweet roll topping tootsie roll. Chocolate bar muffin lemon drops. Fruitcake jelly-o cheesecake apple pie liquorice danish gummies gummies marshmallow. </p>
-                                            <a href="#" class="btn btn-disabled">Reply</a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
                         </li>
-                        <li>
-                            <div class="comment">
-                                <div class="author-img">
-                                    <img src="" alt="">
-                                </div>
-                                <div class="comment-content">
-                                    <p class="author">John Doe  <span class="date"> 02:16 pm - April 03,2014</span> </p>
-                                    <p>Liquorice sweet roll sesame snaps sweet roll liquorice sweet macaroon chocolate. Muffin sweet roll topping tootsie roll. Chocolate bar muffin lemon drops. Fruitcake jelly-o cheesecake apple pie liquorice danish gummies gummies marshmallow. </p>
-                                    <a href="#" class="btn btn-disabled">Reply</a>
-                                </div>
-                            </div>
-
-                        </li>
+                        {/foreach}
+                        {else}
+                        <p>Non ci sono commenti!!!</p>
+                        {/if}
                     </ul>
                 </section> 
+                
                 <div class="comment-form newsection">
                     <h2 class="title">Leave A Reply</h2>
 
@@ -223,3 +205,4 @@ SINGLE TEMPLATE STANDARD; <h1>user_events</h1>
         </div> 
     </div> 
 </section>
+{/if}

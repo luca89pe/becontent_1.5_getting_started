@@ -6,7 +6,7 @@ class EntityCategory extends Entity
 	public function __construct($database,$name, $owner = "")
 	{
 		parent::__construct($database,$name,$owner);
-		$this->setPresentation("name");
+		$this->setPresentation("(%name)");
 		$this->addField("name", VARCHAR, 100);
 		$this->addField("description", TEXT);
 	}

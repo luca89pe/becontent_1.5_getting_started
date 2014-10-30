@@ -121,7 +121,7 @@ Class Content {
          * Executing data retrieve
          */
         $data = $this->getRaw($key);
-
+        
         /**
          * passing retrieved instances to smarty
          */
@@ -279,7 +279,7 @@ Class Content {
         $this->enableRequest();
 
         $this->detectCardinality();
-
+        
         if (isset($this->cache[$key])) {
             $result = $this->cache[$key];
         } else {
@@ -453,7 +453,7 @@ Class Content {
     function setFilter($filter_name, $filter_value) {
         $this->conditions[$filter_name] = $filter_value;
     }
-
+    
     function setLimit($limit) {
         $this->limit = $limit;
     }
