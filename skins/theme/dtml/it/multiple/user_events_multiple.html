@@ -47,12 +47,12 @@ MULTIPLE TEMPLATE STANDARD; <h1>user_events</h1>{if $instances != null || $insta
                             <div class="event-content">
                                 <h3 class="title"><a href="events.php?user_events_id={$instance->id}">{$instance->title}</a></h3>
                                 <ul class="meta">
-                                    <li><a href="#"><i class="icon  fa  fa-microphone"></i>Meeting</a>
+                                    <li><a href="#"><i class="icon  fa  fa-microphone"></i>{$instance->categoria->name}</a>
                                     </li><li class="date"><i class="icon fa fa-calendar"></i>{$instance->date}</li>
                                     <li><a href="#"><i class="icon fa fa-comment"></i> 19</a> </li>
-                                    <li><a href="#"><i class="icon fa fa-user"></i>by {$instance->owner->presentation}</a></li>
+                                    <li><a href="#"><i class="icon fa fa-user"></i>by {$instance->owner->name}</a></li>
                                 </ul>
-                                <p>Nullam facilisis metus quis nunc rhoncus fringilla. Donec nec nisl nisl, vel tincidunt urna. Donec erat erat, suscipit vitae tristique non, posuere nec mi. In faucibus lobortis pharetra.. [...] </p>
+                                <p>{$instance->body|truncate:250:"[...]"}</p>
                                 <a href="events.php?user_events_id={$instance->id}" class="btn btn-disabled">read more</a>
                             </div>
                         </div>
