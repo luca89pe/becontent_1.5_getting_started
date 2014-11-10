@@ -1,0 +1,21 @@
+<div id="liveReport">
+	<!-- MODIFICA QUESTE LINEE-->
+SINGLE TEMPLATE STANDARD; <h1>user_comments</h1>
+{if $instances != null || $instance != null}
+<ul>
+<li>id: {$instance->id}</li>
+<li>name: {$instance->name}</li>
+<li>email: {$instance->email}</li>
+<li>creation: {$instance->creation}</li>
+<li>subject: {$instance->subject}</li>
+<li>body: {$instance->body}</li>
+<li>id_user_events: {$instance->id_user_events->presentation}</li>
+</ul>
+{else}
+<h1>NON CI SONO user_comments</h1>
+{/if}
+
+<!-- MODIFICA QUESTE LINEE-->
+
+</div>
+

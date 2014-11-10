@@ -42,7 +42,7 @@ MULTIPLE TEMPLATE STANDARD; <h1>user_events</h1>{if $instances != null || $insta
                     <div class="event-container clearfix">
                         <div class="event clearfix">
                             <div class="eventsimg">
-                                <img src="img/515x390.gif" alt="">
+                                <img src='data:{$instance->foto->filetype}; base64,{$instance->foto->data}' alt="{$instance->name}"/>
                             </div>
                             <div class="event-content">
                                 <h3 class="title"><a href="events.php?user_events_id={$instance->id}">{$instance->title}</a></h3>
