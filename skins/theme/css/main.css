@@ -4021,3 +4021,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b3c4e', end
 
 
 /********* ADDED BY ME *******/
+.col-md-3 .event .eventsimg{
+    width: 262px;
+    height: 151px;
+}

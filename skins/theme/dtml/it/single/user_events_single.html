@@ -21,9 +21,6 @@ SINGLE TEMPLATE STANDARD; <h1>user_events</h1>
 </div>
 -->
 
-{$instance->categoria->name|@var_dump}
-
-
 {if $instances != null || $instance != null}
 <!-- Sub Banner -->
 <section class="sub-banner newsection">
@@ -31,7 +28,7 @@ SINGLE TEMPLATE STANDARD; <h1>user_events</h1>
         <h2 class="title">Event Detail</h2>
         <ul class="breadcrumb">
            <li><a href="index.php">Home</a></li>
-            <li><a href="#">Events</a></li>
+            <li><a href="events.php">Events</a></li>
             <li>Event Detail</li>
         </ul>
     </div>
@@ -45,7 +42,7 @@ SINGLE TEMPLATE STANDARD; <h1>user_events</h1>
                 <section class="event-container clearfix">
                     <div class="event clearfix">
                         <div class="eventsimg">
-                            <img src="img/870x460.gif" alt="">
+                            <img src='data:{$instance->foto->filetype}; base64,{$instance->foto->data}' alt="{$instance->name}"/>
                         </div>
                         <div class="event-content">
                             <h3 class="title"><a href="#">{$instance->title}</a></h3>

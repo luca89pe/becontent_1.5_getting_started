@@ -47,9 +47,9 @@ MULTIPLE TEMPLATE STANDARD; <h1>user_events</h1>{if $instances != null || $insta
                             <div class="event-content">
                                 <h3 class="title"><a href="events.php?user_events_id={$instance->id}">{$instance->title}</a></h3>
                                 <ul class="meta">
-                                    <li><a href="#"><i class="icon  fa  fa-microphone"></i>{$instance->categoria->name}</a>
-                                    </li><li class="date"><i class="icon fa fa-calendar"></i>{$instance->date}</li>
-                                    <li><a href="#"><i class="icon fa fa-comment"></i> 19</a> </li>
+                                    <li><a href="#"><i class="icon  fa  fa-microphone"></i> {$instance->categoria->name}</a>
+                                    </li><li class="date"><i class="icon fa fa-calendar"></i> {$instance->date}</li>
+                                    <li><a href="events.php?user_events_id={$instance->id}#comments"><i class="icon fa fa-comment"></i> {$instance->user_comments|@count}</a> </li>
                                     <li><a href="#"><i class="icon fa fa-user"></i>by {$instance->owner->name}</a></li>
                                 </ul>
                                 <p>{$instance->body|truncate:250:"[...]"}</p>

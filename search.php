@@ -18,18 +18,10 @@ $search = new Skinlet("search.html");
 
 InitGraphic::getInstance()->createGraphic($main,false,false);
 
-$events = new Content($eventsEntity, $usersEntity);
+$events = new Content($eventsEntity, $usersEntity, $eventsEntity, $categoryEntity);
 
-//var_dump(DB::getInstance()->getEntityByName($eventsEntity->name));
-
-if(isset($_GET['title'])){
-    $events->setFilter("title", $_GET['title']);
-}
-if(isset($_GET['date'])){
-    $events->setFilter("date", "LIKE %".$_GET['date'] . "%");
-}
-if(isset($_GET['owner'])){
-    $events->setFilter("owner", $_GET['owner']);
+if(isset($_GET['category'])){
+    $events->setFilter("categoria", $_GET['category']);
 }
 
 $search->setContent("results", $events->get());

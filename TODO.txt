@@ -1,11 +1,3 @@
-1. search page -> filtrare i risultati
-2. pagination
-3. commenti inseribili tramite form dell'evento
-4. commenti visualizzabili nella pagina dell'evento
-5. categorie
-
-
-
-1. 
-2. CON SMARTY
-5. require in ordine!!!!!!
+1. commenti inseribili da frontend
+2. setfilter non funziona su join multiplo
+3. non mi visualizza il nome della categoria 2, ma solo della 1

@@ -2,64 +2,7 @@
 <div class="banner">
     <div class="container">
         <div class="center">
-            <h1 class="title">Get Ready for The Next Event. It's Begining!</h1>
-            <p>Etiam tristique ornare massa. Suspendisse in porta mauris. Phasellus quis libero eget diam tincidunt ornare. Suspendisse et libero urna. Cras auctor cursus purus, eget fringilla tellus dictum tempus. Ut gravida laoreet tincidunt. </p>
-
-            <!-- Clock -->
-            <div class="clock clearfix">
-
-                <div class="clock-item clock-days ">
-                    <div class="wrap">
-                        <div class="inner">
-                            <div id="canvas-days" class="clock-canvas"></div>
-
-                            <div class="clock-content">
-                                <p class="val">0</p>
-                                <p class="typ type-days">DAYS</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="clock-item clock-hours ">
-                    <div class="wrap">
-                        <div class="inner">
-                            <div id="canvas-hours" class="clock-canvas"></div>
-
-                            <div class="clock-content">
-                                <p class="val">0</p>
-                                <p class="typ type-hours ">HOURS</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="clock-item clock-minutes ">
-                    <div class="wrap">
-                        <div class="inner">
-                            <div id="canvas-minutes" class="clock-canvas"></div>
-
-                            <div class="clock-content">
-                                <p class="val">0</p>
-                                <p class="typ type-minutes">MINUTES</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="clock-item clock-seconds ">
-                    <div class="wrap">
-                        <div class="inner">
-                            <div id="canvas-seconds" class="clock-canvas"></div>
-
-                            <div class="clock-content">
-                                <p class="val">0</p>
-                                <p class="typ type-seconds">SECONDS</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {$next_event}
         </div>     
     </div>
 </div>
@@ -96,7 +39,7 @@
                     </div>
 
                     <div class="form-input ">
-                        <button class="btn btn-pri ">fınd event</button>
+                        <button class="btn btn-pri ">find event</button>
                     </div>
                 </form>
             </div>
@@ -115,15 +58,15 @@
             </ul>
 
 
-            
+
 
 
             <!--  Tabs-1 -->
             <div id="tabs-1">
                 <div class="event-container">
                     <div class="row">
-                            
-                            {$last_events}
+
+                        {$last_events}
 
                     </div><!-- row -->
                 </div>
@@ -133,7 +76,7 @@
             <div id="tabs-2">
                 <div class="event-container">
                     <div class="row">
-                        
+
                         {$popular_events}
 
                     </div><!-- row -->

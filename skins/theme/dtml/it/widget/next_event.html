@@ -1,0 +1,51 @@
+{foreach $instances as $instance}
+{assign var=next_date value=$instance->date|strtotime}
+{assign var=time_diff value=$next_date-$smarty.now}
+<h1 class="title">Get Ready for The Next Event. It's Begining!</h1>
+<h2 class="title">{$instance->title}</h2>
+<p>{$instance->body}</p>
+
+<!-- Clock -->
+<div class="clock clearfix">
+
+    <div class="clock-item clock-days ">
+        <div class="wrap">
+            <div class="inner">
+                <div id="canvas-days" class="clock-canvas"></div>
+
+                <div class="clock-content">
+                    <p class="val">{($time_diff/86400)|floor}</p>
+                    <p class="typ type-days">DAYS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clock-item clock-hours ">
+        <div class="wrap">
+            <div class="inner">
+                <div id="canvas-hours" class="clock-canvas"></div>
+
+                <div class="clock-content">
+                    <p class="val">{($time_diff/3600)%24}</p>
+                    <p class="typ type-hours ">HOURS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clock-item clock-minutes ">
+        <div class="wrap">
+            <div class="inner">
+                <div id="canvas-minutes" class="clock-canvas"></div>
+
+                <div class="clock-content">
+                    <p class="val">{($time_diff/60)%60}</p>
+                    <p class="typ type-minutes">MINUTES</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{/foreach}

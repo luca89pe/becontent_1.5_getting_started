@@ -3,42 +3,6 @@ $(document).ready(function() {
 	new UISearch( document.getElementById( 'sb-search' ) );	
 
 
-//get the current time in unix timestamp seconds
-
-var seconds = new Date().getTime() / 1000;
-
-// var endTime = 'Your end time';
-
-
-if($(".clock").length > 0){
-	$('.clock').final_countdown({
-
-		'start': 1402444800,
-		'end': 1405036800,
-		'now': seconds,
-
-		seconds: {
-			borderColor: '#2c3e50',
-			borderWidth: '5'
-		},
-		minutes: {
-			borderColor: '#2c3e50',
-			borderWidth: '5'
-		},
-		hours: {
-			borderColor: '#2c3e50',
-			borderWidth: '5'
-		},
-		days: {
-			borderColor: '#2c3e50',
-			borderWidth: '5'
-		}
-
-	});
-
-}	
-
-
 //Affix Navigation	
 if($(".main-header").length > 0){			
 	$('.main-header').affix({

@@ -14,11 +14,8 @@ $main = new Skin();
 
 InitGraphic::getInstance()->createGraphic($main,false,false);
 
-//$events = new Content($eventsEntity, $usersEntity, $eventsEntity, $categoryEntity, $eventsEntity, $commentsEntity);
-$events = new Content($eventsEntity, $imageEntity, $eventsEntity);
-
-$events->setFilter("title", "boh");
-
+$events = new Content($eventsEntity, $imageEntity, $eventsEntity, $usersEntity, $eventsEntity, $commentsEntity, $eventsEntity, $categoryEntity);
+//$events->setFilter("title", "boh");
 
 $main->setContent("body", $events->get());
 $main->close();
