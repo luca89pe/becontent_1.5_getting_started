@@ -11,11 +11,5 @@ class EntityCategory extends Entity
 		$this->addField("description", TEXT);
 	}
         
-        
-	public function save($query_conditions)
-	{
-		$query_conditions["owner"]=$_SESSION["user"]["username"];
-		return parent::save($query_conditions);
-	}
 }
-$categoryEntity = new EntityCategory($database, "user_event_categories", WITH_OWNER);
+$categoryEntity = new EntityCategory($database, "user_event_categories");

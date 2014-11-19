@@ -11,11 +11,11 @@ class EntityComments extends Entity
 		parent::__construct($database,$name);
 		$this->setPresentation("name", "subject");
 		
-		$this->addField("name", VARCHAR, 68, MANDATORY);       // The title of the event
+		$this->addField("name", VARCHAR, 68, MANDATORY);
 		$this->addField("email", VARCHAR, 68, MANDATORY);        // Last modification date (automatic)
 		$this->addField("creation", LONGDATE, MANDATORY);       // Creation date (automatic)
-		$this->addField("subject", VARCHAR, 255, MANDATORY);                 // A flag
-		$this->addField("body", TEXT);                          // The content of the event (text field, inserted by a WYSIWYG editor)
+		$this->addField("subject", VARCHAR, 255, MANDATORY);
+		$this->addField("body", TEXT);
         
 	}
 	
