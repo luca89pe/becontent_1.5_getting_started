@@ -117,7 +117,7 @@ Class Auth {
 		}
 		
 		if (!isset($_SESSION['user'])) {
-
+                   
 			
 			$debug_action = "USER NOT LOGGED";
 			
@@ -262,8 +262,8 @@ Class Auth {
 		
 		}
 			
-		if (!$trovato) {		
-			
+		if (!$trovato) {
+                    
 			#echo $script;
 			if (basename($_SERVER['SCRIPT_NAME']) != "ajax-manager.php") {
 				
