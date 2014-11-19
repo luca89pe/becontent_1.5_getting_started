@@ -18,11 +18,14 @@ $search = new Skinlet("search.html");
 
 InitGraphic::getInstance()->createGraphic($main,false,false);
 
-$events = new Content($eventsEntity, $usersEntity, $eventsEntity, $categoryEntity);
+$events = new Content($eventsEntity, $imageEntity, $eventsEntity, $commentsEntity, $eventsEntity, $categoryEntity);
 
 if(isset($_GET['category'])){
     $events->setFilter("categoria", $_GET['category']);
 }
+
+$data = date('Y-m-d H:i:s');
+$events->setFilter("date", "> ".$data);
 
 $search->setContent("results", $events->get());
 
