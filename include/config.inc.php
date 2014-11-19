@@ -239,7 +239,7 @@ class Config{
 		$this->configurations['website'] = Array(
 				"name" 		=> "Disim",
 				"payoff"	=> "",
-				"email"		=> "info@nbecontent.org",
+				"email"		=> "info@becontent.org",
 				"domain" 	=> "disim.univaq.it",
 				"fulldomain" => "http://ricerca.disim.univaq.it",
 				"keywords"	=> "Disim",
@@ -284,7 +284,7 @@ class Config{
 			}
 		}
 
-		$this->configurations['currentlanguage'] = $_SESSION['language'];
+		$this->configurations['currentlanguage'] = 'it';
 	}
 }
 
