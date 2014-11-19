@@ -1,9 +1,5 @@
 <?php
 
-/**
- * @author dipompeodaniele@gmail.com, n.sacco.dev@gmail.com
- */
-
 session_start();
 
 require "include/beContent.inc.php";
