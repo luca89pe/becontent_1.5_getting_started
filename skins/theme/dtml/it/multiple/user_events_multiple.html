@@ -176,10 +176,8 @@ MULTIPLE TEMPLATE STANDARD; <h1>user_events</h1>{if $instances != null || $insta
         var calculateCurrElements = function(){
             // Hide all events
             $('.event-container').hide();
-            alert("calculateCurrElements fired");
             startElement = (currPage-1)*perPage;
             lastElement = startElement + perPage;
-            alert("currPage: "+ currPage +", startElement: " + startElement + ", lastElement: " + lastElement);
             // Show currPage's events
             $('.event-container').slice(startElement, lastElement).show();
         };
