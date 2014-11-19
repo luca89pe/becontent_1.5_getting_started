@@ -17,15 +17,15 @@
             </div>
 
             <div class="col-md-9 eventform-con">
-                <form>
+                <form action="search.php" method="GET">
                     <div class="form-input search-location">
-                        <input type="text" value="" placeholder="Search Event">
+                        <input type="text" name="title" value="" placeholder="Event Title">
                         <i class="icon icon-s fa fa-search"></i>
                         <!--<button class="icon fa fa-globe"></button>-->
                     </div>
 
                     <div class="form-input">
-                        <input placeholder="mm/dd/yy" class="date_timepicker_start">
+                        <input placeholder="mm/dd/yy" name="date" class="date_timepicker_start">
                         <button type="button"  value="open" class="open icon fa fa-calendar"></button>
                     </div>
 
