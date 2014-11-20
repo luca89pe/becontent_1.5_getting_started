@@ -564,7 +564,7 @@ class Entity {
 		 */
 		$query=$select_clause.$join_clause.$where_clause.$order_clause.$limit_clause.";";
 
-		if($this->debugmode)
+		if(!$this->debugmode)
 			echo "Entity::generateSelectQuery for {$this->name}<br>".$query."<br>";
 
 
