@@ -14,7 +14,7 @@ $main = new Skin();
 
 InitGraphic::getInstance()->createGraphic($main,false,false);
 
-$events = new Content($eventsEntity, $imageEntity, $eventsEntity, $usersEntity, $eventsEntity, $commentsEntity, $eventsEntity, $categoryEntity);
+$events = new Content($eventsEntity, $categoryEntity, $eventsEntity, $imageEntity, $eventsEntity, $commentsEntity);
 
 $main->setContent("body", $events->get());
 $main->close();
