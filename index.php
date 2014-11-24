@@ -27,7 +27,8 @@ $home->setContent("popular_events", $popular_events_skin->get());
 
 $next_event_skin = new Skinlet("widget/next_event.html");
 $next_event = clone $events;
-$next_event->setOrderFields("date DESC");
+$next_event->setOrderFields("date");
+$next_event->setFilter("date", "> ".date("Y-m-d H:i:s"));
 $next_event->setLimit(1);
 $next_event->apply($next_event_skin);
 $home->setContent("next_event", $next_event_skin->get());

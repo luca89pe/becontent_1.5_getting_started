@@ -13,9 +13,9 @@ $main = new Skin();
 InitGraphic::getInstance()->createGraphic($main,false,false);
 
 // @Luca
-//$events = new Content($eventsEntity, $imageEntity, $eventsEntity, $commentsEntity, $eventsEntity, $categoryEntity);
+$events = new Content($eventsEntity, $imageEntity, $eventsEntity, $commentsEntity, $eventsEntity, $categoryEntity);
 // @Daniele
-$events = new Content($eventsEntity, $commentsEntity, $eventsEntity, $categoryEntity, $eventsEntity, $imageEntity);
+//$events = new Content($eventsEntity, $categoryEntity, $eventsEntity, $imageEntity, $eventsEntity, $commentsEntity);
     
 if(!empty($_GET['title'])){
     $events->setFilter("title", "LIKE %".$_GET['title']."%");
