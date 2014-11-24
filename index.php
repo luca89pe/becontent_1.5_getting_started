@@ -33,6 +33,12 @@ $next_event->setLimit(1);
 $next_event->apply($next_event_skin);
 $home->setContent("next_event", $next_event_skin->get());
 
+$search_form_skin = new Skinlet("widget/search_form.html");
+$categories = new Content($categoryEntity);
+$categories->setOrderFields("name");
+$categories->apply($search_form_skin);
+$home->setContent("search_form", $search_form_skin->get());
+
 $main->setContent('body', $home->get());
 
 $main->close();
