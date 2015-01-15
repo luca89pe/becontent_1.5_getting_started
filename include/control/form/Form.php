@@ -223,9 +223,6 @@ Class Form extends Skinlet{
 			echo Message::getInstance()->getMessage(MSG_ERROR_DATABASE_GENERIC)." (".basename(__FILE__).":".__LINE__.")";
 		} else {
 			foreach($this->triggeredForms as $formKey=>$form){
-                echo '<br>';
-                echo '<br> form triggered: '.get_class($form);
-                echo '<br>';
 				$form->edit($baseEntity);
 			}
 		}
@@ -353,13 +350,17 @@ Class Form extends Skinlet{
 		$this->description = $text;
 	}
 
-	function addHidden($name, $value) {
+	function addHidden($name, $value, $mainEntry=false)
+    {
+        $factory=new HiddenFieldFactory();
+        $newField=$factory->create($this);
+        $newField->name= $name;
+        $newField->value = $value;
+        $newField->type = "hidden";
+        $newField->mainEntry= $mainEntry;
 
-		$this->elements[] = array("name" => $name,
-				"type" => HIDDEN,
-				"value" => $value
-		);
-	}
+        $this->elements[] = $newField;
+    }
 
 	function addText($name, $label, $size = "20", $mandatory = "off", $maxlength = "", $mainEntry=false)
 	{

@@ -1,3 +1,0 @@
-1. commenti inseribili da frontend
-2. setfilter non funziona su join multiplo
-3. non mi visualizza il nome della categoria 2, ma solo della 1

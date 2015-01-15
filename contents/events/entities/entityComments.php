@@ -12,7 +12,6 @@ class EntityComments extends Entity
 		$this->setPresentation("name", "subject");
 		
 		$this->addField("name", VARCHAR, 68, MANDATORY);
-		$this->addField("email", VARCHAR, 68, MANDATORY);        // Last modification date (automatic)
 		$this->addField("creation", LONGDATE, MANDATORY);       // Creation date (automatic)
 		$this->addField("subject", VARCHAR, 255, MANDATORY);
 		$this->addField("body", TEXT);
